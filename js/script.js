@@ -1,14 +1,9 @@
 "use strict";
-var is_fullscreen = true;
-function open_fullscreen() {
-	let game = document.getElementById("game-area");
-	if(is_fullscreen){
-		// Exit fullscreen
 		is_fullscreen = true;
 		if(is_mobile_device()){
-			game.style.position = "absolute";
-			document.getElementById("mobile-back-button").style.display = "none";
-			document.getElementById("game-player").style.display = "none";
+			document.getElementById("game-player").style.display = "block";
+			game.style.position = "fixed";
+			document.getElementById("mobile-back-button").style.display = "flex";
 		} else {
 			if (game.requestFullscreen) {
 				game.requestFullscreen();
